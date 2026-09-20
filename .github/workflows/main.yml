@@ -19,7 +19,7 @@ jobs:
         with:
           dynamics-url: 'https://hubcoredevsandbox.crm.dynamics.com'
           application-id: '7d5d3f11-5e7c-4c15-b6d3-a1bdf9ce2b29'
-          application-secret: ${{ secrets.DYNAMICS_APPLICATION_SECRET }}
+          application-secret: '5VH8Q~RFcL-~wsJJwc4cKApKjCQX6De4CLCMcaeN'
           tenant-id: 'a18515c2-3198-4fad-97ed-29a46c974fdb'
           solution-name: 'DnB360'
           version-number: '3.1.6.1'
