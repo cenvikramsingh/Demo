@@ -13,9 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Export Dynamics Solution
+      - name: Export Managed Dynamics 365 Solution
         id: export-dynamics-solution
-        uses: dynamics-tools/export-managed-solution@v1.0.0
+        uses: dynamics-tools/export-managed-solution@v1.3.0
         with:
           dynamics-url: 'https://hubcoredevsandbox.crm.dynamics.com'
           application-id: '7d5d3f11-5e7c-4c15-b6d3-a1bdf9ce2b29'
