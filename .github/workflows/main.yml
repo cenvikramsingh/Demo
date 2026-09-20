@@ -8,22 +8,23 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-     - name: Export Dynamics Solution
-      id: export-dynamics-solution
-      uses: dynamics-tools/export-managed-solution@v1.0.0
-      with:
-        dynamics-url: 'https://hubcoredevsandbox.crm.dynamics.com' 
-        application-id: '7d5d3f11-5e7c-4c15-b6d3-a1bdf9ce2b29'
-        application-secret: '5VH8Q~RFcL-~wsJJwc4cKApKjCQX6De4CLCMcaeN'
-        tenant-id: 'a18515c2-3198-4fad-97ed-29a46c974fdb'
-        solution-name: 'DnB360'
-        version-number: '3.1.6.1'
+      - name: Export Dynamics Solution
+        id: export-dynamics-solution
+        uses: dynamics-tools/export-managed-solution@v1.0.0
+        with:
+          dynamics-url: 'https://hubcoredevsandbox.crm.dynamics.com'
+          application-id: '7d5d3f11-5e7c-4c15-b6d3-a1bdf9ce2b29'
+          application-secret: ${{ secrets.DYNAMICS_APPLICATION_SECRET }}
+          tenant-id: 'a18515c2-3198-4fad-97ed-29a46c974fdb'
+          solution-name: 'DnB360'
+          version-number: '3.1.6.1'
 
-    - name: Use the output
-      run: |
-        echo "The file path of the exported solution is ${{ steps.export-dynamics-solution.outputs.exported_file_path }}"
-        echo "The base64 encoded data of the exported solution is ${{ steps.export-dynamics-solution.outputs.exported_file_base64 }}"
+      - name: Use the output
+        run: |
+          echo "The file path of the exported solution is ${{ steps.export-dynamics-solution.outputs.exported_file_path }}"
+          echo "The base64 encoded data of the exported solution is ${{ steps.export-dynamics-solution.outputs.exported_file_base64 }}"
